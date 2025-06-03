@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="(localdb)_mssqllocaldb.USAccidentsStage"
+  DTS:DTSID="{0BD3896F-E60B-4D09-B1DF-49383EE373D3}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=(localdb)\mssqllocaldb;Initial Catalog=USAccidentsStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-USTrafficAccident-{0BD3896F-E60B-4D09-B1DF-49383EE373D3}(localdb)\mssqllocaldb.USAccidentsStage;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,835 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/18/2025 5:18:43 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-3Q8RQB5"
+  DTS:CreatorName="DESKTOP-3Q8RQB5\user"
+  DTS:DTSID="{8B56D9FD-FA95-4788-ACAA-60C35D704E69}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="3072"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{0054F26C-D504-4CFA-891A-D8361F256572}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Driver"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{073C3302-BC34-4029-A387-F014E258B7D4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Driver"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Driver\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Driver\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Driver\Data Conversion.Inputs[Data Conversion Input].Columns[ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ID"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]" />
+                    <inputColumn
+                      refId="Package\Driver\Data Conversion.Inputs[Data Conversion Input].Columns[Age_Band_of_Driver]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Age_Band_of_Driver"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Age_Band_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Driver\Data Conversion.Inputs[Data Conversion Input].Columns[Age_of_Vehicle]"
+                      cachedDataType="r8"
+                      cachedName="Age_of_Vehicle"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Age_of_Vehicle]" />
+                    <inputColumn
+                      refId="Package\Driver\Data Conversion.Inputs[Data Conversion Input].Columns[Driver_Home_Area_Type]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Driver_Home_Area_Type"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Driver_Home_Area_Type]" />
+                    <inputColumn
+                      refId="Package\Driver\Data Conversion.Inputs[Data Conversion Input].Columns[Journey_Purpose_of_Driver]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Journey_Purpose_of_Driver"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Driver\Data Conversion.Inputs[Data Conversion Input].Columns[Sex_of_Driver]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Sex_of_Driver"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sex_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Driver\Data Conversion.Inputs[Data Conversion Input].Columns[Driver_IMD_Decile]"
+                      cachedDataType="r8"
+                      cachedName="Driver_IMD_Decile"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Driver_IMD_Decile]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Driver\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Driver\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID]"
+                      name="Copy of ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Age_Band_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Age_Band_of_Driver]"
+                      name="Copy of Age_Band_of_Driver"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Age_Band_of_Driver]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Age_of_Vehicle]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Age_of_Vehicle]"
+                      name="Copy of Age_of_Vehicle"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Age_of_Vehicle]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver_Home_Area_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver_Home_Area_Type]"
+                      name="Copy of Driver_Home_Area_Type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Driver_Home_Area_Type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Journey_Purpose_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Journey_Purpose_of_Driver]"
+                      name="Copy of Journey_Purpose_of_Driver"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Sex_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Sex_of_Driver]"
+                      name="Copy of Sex_of_Driver"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sex_of_Driver]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver_IMD_Decile]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver_IMD_Decile]"
+                      name="Copy of Driver_IMD_Decile"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Driver_IMD_Decile]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Driver\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Driver\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Driver\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Driver\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Driver\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Driver\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Driver\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimDriver]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Driver\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{C64D1C10-CE0F-4AD4-9989-28EC714A9C3F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(localdb)_mssqllocaldb.USAccidentsDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Copy of ID"
+                      externalMetadataColumnId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID]" />
+                    <inputColumn
+                      refId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Age_Band_of_Driver]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Copy of Age_Band_of_Driver"
+                      externalMetadataColumnId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AgeBandofDriver]"
+                      lineageId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Age_Band_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Sex_of_Driver]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Copy of Sex_of_Driver"
+                      externalMetadataColumnId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SexofDriver]"
+                      lineageId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Sex_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Driver_IMD_Decile]"
+                      cachedDataType="ui4"
+                      cachedName="Copy of Driver_IMD_Decile"
+                      externalMetadataColumnId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DriverIMDDecile]"
+                      lineageId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver_IMD_Decile]" />
+                    <inputColumn
+                      refId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Driver_Home_Area_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Driver_Home_Area_Type"
+                      externalMetadataColumnId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DriverHomeAreaType]"
+                      lineageId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver_Home_Area_Type]" />
+                    <inputColumn
+                      refId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Journey_Purpose_of_Driver]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of Journey_Purpose_of_Driver"
+                      externalMetadataColumnId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[JourneyPurposeofDriver]"
+                      lineageId="Package\Driver\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Journey_Purpose_of_Driver]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DriverKey]"
+                      dataType="i4"
+                      name="DriverKey" />
+                    <externalMetadataColumn
+                      refId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AgeBandofDriver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="AgeBandofDriver" />
+                    <externalMetadataColumn
+                      refId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SexofDriver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="SexofDriver" />
+                    <externalMetadataColumn
+                      refId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DriverIMDDecile]"
+                      dataType="i4"
+                      name="DriverIMDDecile" />
+                    <externalMetadataColumn
+                      refId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DriverHomeAreaType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DriverHomeAreaType" />
+                    <externalMetadataColumn
+                      refId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[JourneyPurposeofDriver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="JourneyPurposeofDriver" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Driver\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Driver\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Driver\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Driver\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Stage stgUSAAccidentsDriver]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Driver\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{0BD3896F-E60B-4D09-B1DF-49383EE373D3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(localdb)_mssqllocaldb.USAccidentsStage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      length="50"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Age_Band_of_Driver]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Age_Band_of_Driver]"
+                      length="50"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Age_Band_of_Driver]"
+                      name="Age_Band_of_Driver"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Age_of_Vehicle]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Age_of_Vehicle]"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Age_of_Vehicle]"
+                      name="Age_of_Vehicle"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Driver_Home_Area_Type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Driver_Home_Area_Type]"
+                      length="50"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Driver_Home_Area_Type]"
+                      name="Driver_Home_Area_Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Journey_Purpose_of_Driver]"
+                      length="50"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]"
+                      name="Journey_Purpose_of_Driver"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sex_of_Driver]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Sex_of_Driver]"
+                      length="50"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sex_of_Driver]"
+                      name="Sex_of_Driver"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Driver_IMD_Decile]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Driver_IMD_Decile]"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].Columns[Driver_IMD_Decile]"
+                      name="Driver_IMD_Decile"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      dataType="wstr"
+                      length="50"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Age_Band_of_Driver]"
+                      dataType="wstr"
+                      length="50"
+                      name="Age_Band_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Age_of_Vehicle]"
+                      dataType="r8"
+                      name="Age_of_Vehicle" />
+                    <externalMetadataColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Driver_Home_Area_Type]"
+                      dataType="wstr"
+                      length="50"
+                      name="Driver_Home_Area_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Journey_Purpose_of_Driver]"
+                      dataType="wstr"
+                      length="50"
+                      name="Journey_Purpose_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Sex_of_Driver]"
+                      dataType="wstr"
+                      length="50"
+                      name="Sex_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Driver_IMD_Decile]"
+                      dataType="r8"
+                      name="Driver_IMD_Decile" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      name="ID" />
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Age_Band_of_Driver]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Age_Band_of_Driver]"
+                      name="Age_Band_of_Driver" />
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Age_of_Vehicle]"
+                      dataType="r8"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Age_of_Vehicle]"
+                      name="Age_of_Vehicle" />
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Driver_Home_Area_Type]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Driver_Home_Area_Type]"
+                      name="Driver_Home_Area_Type" />
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Journey_Purpose_of_Driver]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Journey_Purpose_of_Driver]"
+                      name="Journey_Purpose_of_Driver" />
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Sex_of_Driver]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Sex_of_Driver]"
+                      name="Sex_of_Driver" />
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Driver_IMD_Decile]"
+                      dataType="r8"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Driver_IMD_Decile]"
+                      name="Driver_IMD_Decile" />
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Driver.Paths[Data Conversion Output]"
+              endId="Package\Driver\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Driver\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Driver.Paths[OLE DB Source Output]"
+              endId="Package\Driver\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Driver\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Driver"
+          TopLeft="246,136" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Driver">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Driver\OLE DB Source"
+          TopLeft="98,141" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Driver\OLE DB Destination"
+          TopLeft="545,166" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Driver\Data Conversion"
+          TopLeft="376,115" />
+        <EdgeLayout
+          Id="Package\Driver.Paths[OLE DB Source Output]"
+          TopLeft="248,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128,-26"
+              Start="0,0"
+              End="120.5,-26">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="60,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="60,0"
+                    Point2="64,0"
+                    Point3="64,-4" />
+                  <mssgle:LineSegment
+                    End="64,-22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64,-22"
+                    Point2="64,-26"
+                    Point3="68,-26" />
+                  <mssgle:LineSegment
+                    End="120.5,-26" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Driver.Paths[Data Conversion Output]"
+          TopLeft="532,136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98.5,30"
+              Start="0,0"
+              End="98.5,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="94.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94.5,0"
+                    Point2="98.5,0"
+                    Point3="98.5,4" />
+                  <mssgle:LineSegment
+                    End="98.5,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Driver\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Driver\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
